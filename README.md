@@ -10,7 +10,7 @@ Notes are stored in the browser's local storage
 Getting Started
 Clone the repository:
 bash
-git clone https://github.com/awasthi108/Notes-App-Cipherschools.git
+git clone https://github.com/J-S-Nafeez/NoteApp.git
 
 
 # Usage
