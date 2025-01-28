@@ -50,20 +50,25 @@ Run both the backend and frontend:
 In the backend folder:
 
 npm start
+
 In the frontend folder:
 
 npm start
+
 The app will now be running locally on http://localhost:3000. 🌟
 
 Live Demo 🌍
+
 You can check out the live demo of the app here:
 
 Live Demo 🌐
 
 Contributing 🤝
+
 Feel free to fork this repository, make improvements, and open pull requests! Contributions are always welcome. 🙌
 
 License 📜
+
 This project is licensed under the MIT License - see the LICENSE file for details. 🔑
 
 
