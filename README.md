@@ -1,4 +1,4 @@
-# Notes App 📝
+# 📝 **Notes App**
 
 Welcome to the **Notes App**! This application allows users to create, update, delete, and manage their notes in a simple and intuitive interface. Built using the **MERN stack** (MongoDB, Express.js, React, Node.js), the app provides a seamless experience for managing your daily tasks. 🚀
 
@@ -27,53 +27,56 @@ Welcome to the **Notes App**! This application allows users to create, update, d
 ### Steps 🔽
 
 1. Clone the repository:
+    ```bash
+    git clone https://github.com/J-S-Nafeez/NoteApp.git
+    ```
 
-   ```bash
-   git clone https://github.com/J-S-Nafeez/NoteApp.git
-Navigate to the project folder:
+2. Navigate to the project folder:
+    ```bash
+    cd NoteApp
+    ```
 
-cd NoteApp
-Install backend dependencies:
+3. Install backend dependencies:
+    ```bash
+    cd backend
+    npm install
+    ```
 
-cd backend
-npm install
-Install frontend dependencies:
+4. Install frontend dependencies:
+    ```bash
+    cd frontend
+    npm install
+    ```
 
-cd frontend
-npm install
-Set up MongoDB (either locally or use a cloud service like MongoDB Atlas). 🌐
+5. Set up MongoDB (either locally or use a cloud service like MongoDB Atlas). 🌐
 
-Add your MongoDB URI to the backend configuration file. 🔐
+6. Add your MongoDB URI to the backend configuration file. 🔐
 
-Run both the backend and frontend:
+7. Run both the backend and frontend:
+    - In the **backend** folder:
+      ```bash
+      npm start
+      ```
 
-In the backend folder:
+    - In the **frontend** folder:
+      ```bash
+      npm start
+      ```
 
-npm start
+    The app will now be running locally at [http://localhost:3000](http://localhost:3000). 🌟
 
-In the frontend folder:
+## Live Demo 🌍
 
-npm start
+You can check out the live demo of the app here:  
+[🌐 Task Noter Demo](https://tasknoter.netlify.app/)
 
-The app will now be running locally on http://localhost:3000. 🌟
-
-Live Demo 🌍
-
-You can check out the live demo of the app here:
-
-Live Demo 🌐
-
-Contributing 🤝
+## Contributing 🤝
 
 Feel free to fork this repository, make improvements, and open pull requests! Contributions are always welcome. 🙌
 
-License 📜
+## License 📜
 
-This project is licensed under the MIT License - see the LICENSE file for details. 🔑
-
-
-This version is correctly formatted with clear sections, links, and proper markdown syntax.
-
+This project is licensed under the **ISC License** - see the LICENSE file for details. 🔑
 
 
 
