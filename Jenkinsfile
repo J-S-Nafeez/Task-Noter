@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     tools {
-        nodejs "Node16"
+        nodejs "Node16" // Make sure this is installed and configured in Jenkins
     }
 
     stages {
-        stage('Clone') {
+        stage('Clone Repository') {
             steps {
                 git 'https://github.com/J-S-Nafeez/Task-Noter.git'
             }
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Frontend') {
             steps {
-                dir('Task_Noter') {
+                dir('Task-Noter') {
                     sh 'npm install'
                     sh 'npm run build'
                 }
@@ -25,7 +25,8 @@ pipeline {
             steps {
                 dir('notes-app-backend') {
                     sh 'npm install'
-                    sh 'node index.js &'
+                    // Optional: Add test script here if available
+                    // sh 'npm test'
                 }
             }
         }
