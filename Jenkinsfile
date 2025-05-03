@@ -1,19 +1,19 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node-23.11.0'  // Reference the exact name you gave when configuring Node.js in the Global Tool Configuration
+        nodejs 'node-23.11.0'
     }
     stages {
-        stage('Checkout SCM') {
+        stage('Verify Node.js Installation') {
             steps {
-                checkout scm
+                sh 'node -v'  // Verify that the correct Node.js version is available
             }
         }
         stage('Install Frontend') {
             steps {
                 script {
                     dir('tasknoter') {
-                        sh 'npm install'  // Install dependencies for the frontend
+                        sh 'npm install'  // Install frontend dependencies
                     }
                 }
             }
@@ -22,18 +22,10 @@ pipeline {
             steps {
                 script {
                     dir('notes-app-backend') {
-                        sh 'npm install'  // Install dependencies for the backend
+                        sh 'npm install'  // Install backend dependencies
                     }
                 }
             }
-        }
-    }
-    post {
-        success {
-            echo 'Build was successful!'
-        }
-        failure {
-            echo 'Build failed!'
         }
     }
 }
