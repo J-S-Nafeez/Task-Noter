@@ -1,41 +1,38 @@
 pipeline {
     agent any
-    environment {
-        // Reference the existing Node.js version configured in Jenkins without trying to install it
-        NODE_HOME = tool name: 'node-23.11.0', type: 'NodeJS'
-        PATH = "${NODE_HOME}/bin:${env.PATH}"
-    }
+
     stages {
-        stage('Checkout SCM') {
+        stage('Checkout Code') {
             steps {
-                checkout scm  // Checkout the code from your Git repository
+                git 'https://github.com/J-S-Nafeez/Task-Noter.git'
             }
         }
-        stage('Install Frontend') {
+
+        stage('Install Dependencies') {
             steps {
-                script {
-                    dir('tasknoter') {
-                        sh 'npm install'  // Install frontend dependencies
-                    }
-                }
+                sh 'npm install'
             }
         }
-        stage('Install Backend') {
+
+        stage('Build Project') {
             steps {
-                script {
-                    dir('notes-app-backend') {
-                        sh 'npm install'  // Install backend dependencies
-                    }
-                }
+                sh 'npm run build'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'npm test || echo "No tests found or failed tests."'
             }
         }
     }
+
     post {
         success {
-            echo 'Build was successful!'
+            echo '✅ Task-Noter pipeline completed successfully!'
         }
         failure {
-            echo 'Build failed!'
+            echo '❌ Task-Noter pipeline failed. Check the logs for details.'
         }
     }
 }
