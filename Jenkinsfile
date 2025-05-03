@@ -1,7 +1,9 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'node-23.11.0'  // Reference the configured Node.js version
+    environment {
+        // Reference the existing Node.js version configured in Jenkins without trying to install it
+        NODE_HOME = tool name: 'node-23.11.0', type: 'NodeJS'
+        PATH = "${NODE_HOME}/bin:${env.PATH}"
     }
     stages {
         stage('Checkout SCM') {
