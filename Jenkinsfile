@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node-23.11.0'
+        nodejs 'node-23.11.0'  // Reference the configured Node.js version
     }
     stages {
-        stage('Verify Node.js Installation') {
+        stage('Checkout SCM') {
             steps {
-                sh 'node -v'  // Verify that the correct Node.js version is available
+                checkout scm  // Checkout the code from your Git repository
             }
         }
         stage('Install Frontend') {
@@ -26,6 +26,14 @@ pipeline {
                     }
                 }
             }
+        }
+    }
+    post {
+        success {
+            echo 'Build was successful!'
+        }
+        failure {
+            echo 'Build failed!'
         }
     }
 }
