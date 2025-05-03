@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'node-23.11.0'  // Reference the exact name you gave when configuring Node.js in the Global Tool Configuration
+    }
     stages {
         stage('Checkout SCM') {
             steps {
@@ -10,7 +13,7 @@ pipeline {
             steps {
                 script {
                     dir('tasknoter') {
-                        sh 'npm install'
+                        sh 'npm install'  // Install dependencies for the frontend
                     }
                 }
             }
@@ -19,12 +22,11 @@ pipeline {
             steps {
                 script {
                     dir('notes-app-backend') {
-                        sh 'npm install'
+                        sh 'npm install'  // Install dependencies for the backend
                     }
                 }
             }
         }
-        // Add additional stages as needed for build, test, or deploy
     }
     post {
         success {
